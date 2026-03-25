@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#fefcff",
+              "surface-container-high": "#e6e8e9",
+              "surface": "#f8fafb",
+              "on-tertiary-container": "#4d3e00",
+              "on-surface": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container-low": "#f2f4f5",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#424751",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#007244",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004689",
+              "surface-dim": "#d8dadb",
+              "surface-container": "#eceeef",
+              "primary-fixed": "#d5e3ff",
+              "secondary": "#006d40",
+              "inverse-surface": "#2e3132",
+              "tertiary-container": "#cca800",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "tertiary": "#715c00",
+              "inverse-primary": "#a8c8ff",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#165ca9",
+              "on-tertiary-fixed": "#231b00",
+              "on-secondary-fixed": "#002110",
+              "surface-tint": "#1b5eac",
+              "tertiary-fixed-dim": "#ecc300",
+              "tertiary-fixed": "#ffe17b",
+              "on-tertiary-fixed-variant": "#554500",
+              "on-secondary-fixed-variant": "#00522f",
+              "on-primary-fixed": "#001b3c",
+              "secondary-fixed-dim": "#61dd98",
+              "secondary-fixed": "#7efab3",
+              "primary-container": "#3a75c4",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eff1f2",
+              "error-container": "#ffdad6",
+              "secondary-container": "#7bf7b0",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#a8c8ff",
+              "outline-variant": "#c2c6d3",
+              "outline": "#727782",
+              "background": "#f8fafb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] dark:bg-[#191c1d] opacity-80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#165ca9] dark:text-[#3a75c4]" data-icon="account_balance">account_balance</span>
+<div>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-[#191c1d] dark:text-[#f8fafb] text-lg leading-none">ASI Gabon</h1>
+<p class="font-label text-[10px] uppercase tracking-[0.1em] text-primary/70 font-semibold">Assistant citoyen</p>
+</div>
+</div>
+<button class="text-[#165ca9] dark:text-[#3a75c4] font-semibold hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] transition-colors px-4 py-2 rounded-lg active:scale-95 duration-200">
+            Accueil
+        </button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col pt-16 pb-32 max-w-4xl mx-auto w-full px-4 md:px-6">
+<!-- Chatbot Wrapper -->
+<div class="flex-1 mt-6 bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_rgba(25,28,29,0.06)] flex flex-col overflow-hidden" id="chatbot-wrapper">
+<!-- Chat Feed -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 space-y-8 no-scrollbar">
+<!-- Assistant Welcome Message -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-highest p-5 rounded-xl rounded-bl-sm text-on-surface leading-relaxed shadow-sm">
+<p class="mb-2">Bonjour ! Je suis l'assistant intelligent de l'Administration Gabonaise. Comment puis-je vous accompagner dans vos démarches aujourd'hui ?</p>
+</div>
+<span class="text-[10px] font-label text-outline mt-2 ml-1 uppercase tracking-wider">ASI GABON • MAINTENANT</span>
+</div>
+<!-- User Example Message -->
+<div class="flex flex-col items-end max-w-[85%] ml-auto">
+<div class="bg-primary text-on-primary p-5 rounded-xl rounded-br-sm shadow-md">
+<p>Quelles sont les pièces à fournir pour un renouvellement de passeport ?</p>
+</div>
+<span class="text-[10px] font-label text-outline mt-2 mr-1 uppercase tracking-wider">VOUS • 10:42</span>
+</div>
+<!-- Assistant Response Example -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-highest p-5 rounded-xl rounded-bl-sm text-on-surface leading-relaxed shadow-sm relative">
+<div class="absolute inset-0 bg-primary/2 rounded-xl pointer-events-none"></div>
+<p class="mb-4">Pour renouveler votre passeport ordinaire au Gabon, vous devez préparer les documents suivants :</p>
+<ul class="list-disc pl-5 space-y-2 mb-6 text-sm">
+<li>L'original de l'acte de naissance légalisé</li>
+<li>L'ancien passeport</li>
+<li>Un justificatif de domicile (facture SEEG ou certificat de résidence)</li>
+<li>Quittance des droits de chancellerie (45 000 FCFA)</li>
+</ul>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/30 px-4 py-2 rounded-lg text-sm font-medium text-primary hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+                                Voir le site officiel
+                            </button>
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/30 px-4 py-2 rounded-lg text-sm font-medium text-primary hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                                Localiser un centre
+                            </button>
+<button class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/30 px-4 py-2 rounded-lg text-sm font-medium text-primary hover:bg-secondary-container transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                                Télécharger le formulaire
+                            </button>
+</div>
+</div>
+<span class="text-[10px] font-label text-outline mt-2 ml-1 uppercase tracking-wider">ASI GABON • 10:43</span>
+</div>
+</div>
+<!-- Suggestion Chips -->
+<div class="px-4 py-3 bg-surface-container-low/50 overflow-x-auto no-scrollbar whitespace-nowrap border-t border-outline-variant/15">
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:border-secondary transition-all">Comment faire un passeport?</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:border-secondary transition-all">Carte d’identité</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:border-secondary transition-all">Créer une entreprise</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:border-secondary transition-all">CNAMGS</button>
+<button class="px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full text-sm font-medium text-on-surface-variant hover:bg-secondary-container hover:border-secondary transition-all">Impôts</button>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 md:p-6 bg-surface-container-low border-t border-outline-variant/15">
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest text-on-surface py-4 pl-6 pr-14 rounded-xl shadow-sm border-none focus:ring-2 focus:ring-primary/20 placeholder:text-outline/60 text-base" placeholder="Posez votre question sur une démarche administrative..." type="text"/>
+<button class="absolute right-3 p-2 text-primary hover:bg-primary/5 rounded-lg transition-colors active:scale-90">
+<span class="material-symbols-outlined text-2xl font-bold" data-icon="send">send</span>
+</button>
+</div>
+<p class="text-[11px] text-center text-outline mt-4 font-medium leading-tight px-4">
+                    Les réponses sont fournies à titre d’orientation à partir de sources administratives officielles.
+                </p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 shadow-[0_-8px_32px_rgba(25,28,29,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#165ca9] dark:text-[#3a75c4] bg-[#3a75c4]/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] dark:hover:text-[#7bf7b0] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] dark:hover:text-[#7bf7b0] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">À propos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] dark:hover:text-[#7bf7b0] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Support</span>
+</a>
+</nav>
+</body></html>

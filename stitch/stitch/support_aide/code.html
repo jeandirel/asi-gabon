@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support - ASI Gabon</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#fefcff",
+              "surface-container-high": "#e6e8e9",
+              "surface": "#f8fafb",
+              "on-tertiary-container": "#4d3e00",
+              "on-surface": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container-low": "#f2f4f5",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#424751",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#007244",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004689",
+              "surface-dim": "#d8dadb",
+              "surface-container": "#eceeef",
+              "primary-fixed": "#d5e3ff",
+              "secondary": "#006d40",
+              "inverse-surface": "#2e3132",
+              "tertiary-container": "#cca800",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "tertiary": "#715c00",
+              "inverse-primary": "#a8c8ff",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#165ca9",
+              "on-tertiary-fixed": "#231b00",
+              "on-secondary-fixed": "#002110",
+              "surface-tint": "#1b5eac",
+              "tertiary-fixed-dim": "#ecc300",
+              "tertiary-fixed": "#ffe17b",
+              "on-tertiary-fixed-variant": "#554500",
+              "on-secondary-fixed-variant": "#00522f",
+              "on-primary-fixed": "#001b3c",
+              "secondary-fixed-dim": "#61dd98",
+              "secondary-fixed": "#7efab3",
+              "primary-container": "#3a75c4",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eff1f2",
+              "error-container": "#ffdad6",
+              "secondary-container": "#7bf7b0",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#a8c8ff",
+              "outline-variant": "#c2c6d3",
+              "outline": "#727782",
+              "background": "#f8fafb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .asymmetric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] dark:bg-[#191c1d] opacity-80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#165ca9] dark:text-[#3a75c4] text-2xl" data-icon="account_balance">account_balance</span>
+<span class="font-['Manrope'] font-bold tracking-tight text-[#191c1d] dark:text-[#f8fafb] text-xl">ASI Gabon</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] px-3 py-1 rounded-lg transition-colors font-medium" href="#">Assistant</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] px-3 py-1 rounded-lg transition-colors font-medium" href="#">Services</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] px-3 py-1 rounded-lg transition-colors font-medium" href="#">À propos</a>
+<a class="text-[#165ca9] dark:text-[#3a75c4] font-semibold px-3 py-1 rounded-lg" href="#">Support</a>
+</nav>
+<div class="text-[#165ca9] dark:text-[#3a75c4] font-bold text-sm uppercase tracking-widest cursor-pointer active:scale-95 duration-200">
+            Accueil
+        </div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-20">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-12 md:p-20">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img alt="pattern" class="w-full h-full object-cover" data-alt="abstract geometric pattern with subtle lines and architectural shapes in shades of deep blue and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKTgHT4u7kRqZLWvmE6IFK08Wpqx-V7tECJFud4P8DaD1JSmIRWVt22Y0DzuXzutzHvBufWZjyVHHaSwcmnB0_Cl1p-Xehxea4-mFXi-WRd19LW3WkGMN-e07RoQ-zaKBk5qkZpqkTCU0SylmpHvmSuNXgA1cwCtHUqjIhn8iKxn1lcOdMGTREJj7n_710Z6HaazxrUhuSwEc1zTuUtC69lHSjqzdoND6R4SMU_v7YYrgyxysG_yqixUVotbOG1uhTepkFwMwJ25k"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary-container text-on-secondary-container font-label text-[10px] font-bold tracking-[0.1em] uppercase">Centre d'Assistance</span>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold text-on-primary tracking-tight mb-6">Comment pouvons-nous vous aider ?</h1>
+<p class="text-on-primary/80 text-lg md:text-xl leading-relaxed font-body">ASI Gabon s'engage à fournir un accompagnement transparent et efficace pour toutes vos démarches administratives numériques.</p>
+</div>
+</div>
+</section>
+<!-- Main Content Asymmetric Layout -->
+<div class="asymmetric-grid items-start">
+<!-- Left Column: FAQ & Official Links -->
+<div class="space-y-12">
+<!-- FAQ Section -->
+<div>
+<h2 class="font-headline text-3xl font-bold mb-8 text-on-surface">Questions Fréquentes</h2>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-semibold text-on-surface">Comment réinitialiser mon accès ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+                                Pour réinitialiser votre accès, utilisez le portail e-Gabon muni de votre identifiant unique national. Suivez les étapes de vérification par SMS ou Email sécurisé.
+                            </div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-semibold text-on-surface">Quels sont les délais de traitement ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+                                Les délais standards varient entre 48h et 72h ouvrables selon la complexité du service sollicité. Vous recevrez une notification à chaque étape.
+                            </div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group bg-surface-container-low rounded-xl overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+<span class="font-semibold text-on-surface">Mes données sont-elles sécurisées ?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-on-surface-variant text-sm leading-relaxed">
+                                ASI Gabon utilise un cryptage de niveau souverain pour garantir l'intégrité et la confidentialité de toutes les données citoyennes gabonaises.
+                            </div>
+</details>
+</div>
+</div>
+<!-- Official Portals -->
+<div>
+<h2 class="font-headline text-xl font-bold mb-6 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="link">link</span>
+                        Portails Officiels
+                    </h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<a class="p-4 bg-surface-container-lowest border border-outline-variant/15 rounded-xl flex items-center gap-4 hover:bg-surface-container-high transition-all" href="#">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="gavel">gavel</span>
+</div>
+<span class="text-sm font-medium">Portail de Justice</span>
+</a>
+<a class="p-4 bg-surface-container-lowest border border-outline-variant/15 rounded-xl flex items-center gap-4 hover:bg-surface-container-high transition-all" href="#">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="text-sm font-medium">Trésor Public</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Right Column: Contact Form -->
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-[2rem] shadow-sm border border-outline-variant/10">
+<div class="mb-10">
+<h2 class="font-headline text-3xl font-bold mb-3 text-on-surface">Nous Contacter</h2>
+<p class="text-on-surface-variant">Nos agents vous répondent sous 24h ouvrées.</p>
+</div>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">Nom Complet</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface" placeholder="Jean-Pierre..." type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">Adresse Email</label>
+<input class="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface" placeholder="contact@domaine.ga" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">Votre Message</label>
+<textarea class="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface resize-none" placeholder="Comment pouvons-nous vous accompagner ?" rows="5"></textarea>
+</div>
+<div class="flex items-center gap-4 p-4 bg-secondary-container/20 rounded-xl">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<p class="text-xs text-on-secondary-container leading-tight">En envoyant ce message, vous acceptez notre politique de confidentialité des données institutionnelles.</p>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all flex items-center justify-center gap-2" type="submit">
+                        Envoyer ma demande
+                        <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+<div class="mt-12 pt-12 border-t border-outline-variant/10 flex flex-wrap gap-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Téléphone</p>
+<p class="font-bold">+241 01 76 00 00</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-outline font-bold">Email Direct</p>
+<p class="font-bold">support@asi.gouv.ga</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Location Section (Atmospheric) -->
+<section class="mt-32">
+<div class="relative h-64 rounded-[2rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Map" class="w-full h-full object-cover" data-alt="clean map view of Libreville Gabon showing coastlines and urban grid with professional blue and grey tones" data-location="Libreville, Gabon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOPYfi5cL_N0rkMTsdXPqDmYz46YC7cmrQX0G8JIWf3o-7CZ7fPaSUkWa5Td9NvCqbBY_-AaZQ0hSm97Reg0oFY1PjWG2_rc2-rTpuY2T4xR1_70838l3Dr-z8BDo-2I1kvb8mOFrNUi4qzlVoJVfPgnM0oGUHisLtd99oPWfBzPLY_aaa9pMjG3xDMGoNgPkDpDva5YcEOTXlXnqZxcy3fELqAO9yzrEc-Kr_SMjsu2Fcv6SqEN5jlLh-0H_CsA1pBBtXl8Hi1eE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 bg-surface/90 glass-effect p-6 rounded-2xl">
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary mb-1">Siège Social</p>
+<h3 class="font-headline font-bold text-xl">Libreville, Gabon</h3>
+<p class="text-sm text-on-surface-variant">Boulevard de l'Indépendance, BP 1234</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 rounded-t-2xl shadow-[0_-8px_32px_rgba(25,28,29,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">À propos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#165ca9] dark:text-[#3a75c4] bg-[#3a75c4]/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support" style="font-variation-settings: 'FILL' 1;">contact_support</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Support</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#fefcff",
+              "surface-container-high": "#e6e8e9",
+              "surface": "#f8fafb",
+              "on-tertiary-container": "#4d3e00",
+              "on-surface": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container-low": "#f2f4f5",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#424751",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#007244",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004689",
+              "surface-dim": "#d8dadb",
+              "surface-container": "#eceeef",
+              "primary-fixed": "#d5e3ff",
+              "secondary": "#006d40",
+              "inverse-surface": "#2e3132",
+              "tertiary-container": "#cca800",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "tertiary": "#715c00",
+              "inverse-primary": "#a8c8ff",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#165ca9",
+              "on-tertiary-fixed": "#231b00",
+              "on-secondary-fixed": "#002110",
+              "surface-tint": "#1b5eac",
+              "tertiary-fixed-dim": "#ecc300",
+              "tertiary-fixed": "#ffe17b",
+              "on-tertiary-fixed-variant": "#554500",
+              "on-secondary-fixed-variant": "#00522f",
+              "on-primary-fixed": "#001b3c",
+              "secondary-fixed-dim": "#61dd98",
+              "secondary-fixed": "#7efab3",
+              "primary-container": "#3a75c4",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eff1f2",
+              "error-container": "#ffdad6",
+              "secondary-container": "#7bf7b0",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#a8c8ff",
+              "outline-variant": "#c2c6d3",
+              "outline": "#727782",
+              "background": "#f8fafb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] dark:bg-[#191c1d] opacity-80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#165ca9] dark:text-[#3a75c4]" data-icon="account_balance">account_balance</span>
+<span class="text-xl font-bold tracking-tighter text-[#165ca9] dark:text-[#3a75c4]">ASI Gabon</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="#">Assistant</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="#">Services</a>
+<a class="text-[#165ca9] dark:text-[#3a75c4] font-semibold font-['Manrope'] tracking-tight" href="#">À propos</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] hover:bg-[#e6e8e9] dark:hover:bg-[#3e4142] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="#">Support</a>
+</nav>
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold active:scale-95 duration-200">Accueil</button>
+</header>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Section: The Sovereign Monolith Aesthetic -->
+<section class="mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-[0.75rem] font-medium uppercase tracking-widest mb-6">Institutionnel</span>
+<h1 class="text-on-surface text-5xl md:text-7xl font-headline font-bold tracking-tight leading-[1.1] mb-8">
+                        L'intelligence numérique au service de la <span class="text-primary">Souveraineté</span>.
+                    </h1>
+<p class="text-on-surface-variant text-xl md:text-2xl font-body leading-relaxed max-w-3xl">
+                        ASI Gabon est un assistant numérique destiné à simplifier l’accès aux services publics, conçu pour accompagner chaque citoyen dans ses démarches administratives avec clarté et efficacité.
+                    </p>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="h-64 w-full rounded-xl bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="Modern minimalist architectural detail of a government building in Libreville with clean lines and soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDozukGYDJlmM5X58dSUjX4Oayml97ljchHyLj6WGeliEPf2SQOWAOh9g0Ldi_ufoa-wRXmc08600n2WXaK-jtvMNwtL6G57muVl9M3-xrciOTBgIPpmNo7chLc8894Kmq4fvjApncAHrMoMECoTWRgKRN7jo-U0toOzI88TaQ8REhQsqrU8ezkvbRdr8G8zNj3wPjAgeDzE0LBvqw_qckwWSwLB0xYzV5B-V8q5NhG9BWuknCox1m0B-FRlgfe_5PhiC9edtTpLVo"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Content Canvas: Background Shift Separation -->
+<section class="bg-surface-container-low rounded-[2rem] p-8 md:p-16 mb-24">
+<div class="flex flex-col lg:flex-row gap-16">
+<div class="lg:w-1/3">
+<h2 class="text-on-surface text-3xl font-headline font-medium sticky top-24">Notre Mission</h2>
+</div>
+<div class="lg:w-2/3 space-y-8">
+<p class="text-on-surface text-lg font-body leading-relaxed">
+                        Dans un monde en constante mutation numérique, le Gabon réaffirme sa volonté de moderniser son administration. ASI Gabon incarne cette transition en offrant une interface unique, intuitive et sécurisée entre l'État et ses usagers.
+                    </p>
+<p class="text-on-surface text-lg font-body leading-relaxed">
+                        Notre plateforme n'est pas seulement un outil technologique ; c'est un engagement vers une gouvernance plus transparente et plus proche des préoccupations quotidiennes des Gabonais. En centralisant l'accès aux informations et aux formulaires officiels, nous réduisons les barrières bureaucratiques.
+                    </p>
+<div class="pt-8">
+<div class="h-[1px] bg-outline-variant/15 w-full mb-8"></div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col">
+<span class="text-primary text-4xl font-headline font-bold">100%</span>
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-wider">Officiel</span>
+</div>
+<div class="w-[1px] h-12 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-secondary text-4xl font-headline font-bold">24/7</span>
+<span class="text-on-surface-variant text-sm font-label uppercase tracking-wider">Disponibilité</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Nos Principes: Bento Grid Inspired Layout -->
+<section class="mb-24">
+<div class="mb-12">
+<h2 class="text-on-surface text-3xl font-headline font-medium mb-4">Nos principes</h2>
+<div class="h-1 w-24 bg-tertiary-container rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Simplicité -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="text-on-surface text-xl font-headline font-bold mb-3">Simplicité</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Une interface dépouillée pour que l'essentiel soit toujours à portée de clic, sans complexité inutile.
+                    </p>
+</div>
+<!-- Accessibilité -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="universal_currency">universal_currency</span>
+</div>
+<h3 class="text-on-surface text-xl font-headline font-bold mb-3">Accessibilité</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Conçu pour tous les terminaux et tous les citoyens, quelles que soient leurs aptitudes technologiques.
+                    </p>
+</div>
+<!-- Fiabilité -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center mb-6 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="text-on-surface text-xl font-headline font-bold mb-3">Fiabilité</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Des données sécurisées et des réponses basées scrupuleusement sur les textes de loi officiels.
+                    </p>
+</div>
+<!-- Orientation -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-6 group-hover:bg-on-surface group-hover:text-surface transition-colors">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+</div>
+<h3 class="text-on-surface text-xl font-headline font-bold mb-3">Orientation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                        Un aiguillage précis vers les services et ministères compétents pour chaque demande spécifique.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Institutional Trust Banner -->
+<section class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Interior of a modern high-end office with glass walls and professional minimalist furniture representing institutional transparency" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBkzi9EV1L5Y1B99EAOBesvQk5h9F-OdwoFZdFthdVLmt5xS_BvUohSGBJfqhDLoX-OP0FP7z0HQ8nbV3L9mPhSjkmSmWyKquATXGVHVjbwxW4O8YApsogKfm_pecgVu4jXLkJF38dDdvcHSlYyh_Yq58cs36FMk5-sDcDd_ujgJ6vcvOXL5rJltpeJzvVoacQGqJcKu0axwacUdBLdJPTAgD1ZhvNWpyA-9Z-nS2RHNZJonX7SOG_AruIhfJMce7pDLlK1Z8N32U"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-container/70 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-on-primary text-4xl font-headline font-bold mb-6">Au service de la République Gabonaise</h2>
+<p class="text-on-primary/90 text-lg mb-8 leading-relaxed">
+                    ASI Gabon opère sous la supervision des autorités nationales pour garantir un standard d'excellence et de conformité administrative.
+                </p>
+<div class="flex gap-4">
+<button class="px-8 py-3 rounded-full bg-secondary-container text-on-secondary-container font-semibold hover:bg-secondary-fixed transition-colors">Consulter les services</button>
+<button class="px-8 py-3 rounded-full border border-on-primary/30 text-on-primary font-semibold hover:bg-on-primary/10 transition-colors">Nous contacter</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 rounded-t-2xl shadow-[0_-8px_32px_rgba(25,28,29,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#165ca9] dark:text-[#3a75c4] bg-[#3a75c4]/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">À propos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Support</span>
+</a>
+</nav>
+<!-- Institutional Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant/10 py-16 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_balance">account_balance</span>
+<span class="text-2xl font-bold tracking-tighter text-primary">ASI Gabon</span>
+</div>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed">
+                    Plateforme officielle de l'administration Gabonaise pour la facilitation des démarches numériques citoyennes.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<h4 class="text-on-surface font-headline font-bold mb-4">Légal</h4>
+<ul class="space-y-2 text-on-surface-variant text-sm">
+<li><a class="hover:text-primary" href="#">Confidentialité</a></li>
+<li><a class="hover:text-primary" href="#">Mentions Légales</a></li>
+<li><a class="hover:text-primary" href="#">Conditions d'Utilisation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-surface font-headline font-bold mb-4">Contact</h4>
+<ul class="space-y-2 text-on-surface-variant text-sm">
+<li>Libreville, Gabon</li>
+<li>support@asi.gouv.ga</li>
+<li>+241 (0) 11 00 00 00</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant text-xs font-label">© 2024 RÉPUBLIQUE GABONAISE. TOUS DROITS RÉSERVÉS.</p>
+<div class="flex gap-4">
+<div class="w-8 h-4 bg-[#009E60]"></div> <!-- Green -->
+<div class="w-8 h-4 bg-[#FCD116]"></div> <!-- Yellow -->
+<div class="w-8 h-4 bg-[#3A75C4]"></div> <!-- Blue -->
+</div>
+</div>
+</footer>
+</body></html>

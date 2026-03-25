@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ASI Gabon - Services Institutionnels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#fefcff",
+              "surface-container-high": "#e6e8e9",
+              "surface": "#f8fafb",
+              "on-tertiary-container": "#4d3e00",
+              "on-surface": "#191c1d",
+              "surface-container-highest": "#e1e3e4",
+              "surface-container-low": "#f2f4f5",
+              "surface-variant": "#e1e3e4",
+              "on-surface-variant": "#424751",
+              "on-primary": "#ffffff",
+              "on-secondary-container": "#007244",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004689",
+              "surface-dim": "#d8dadb",
+              "surface-container": "#eceeef",
+              "primary-fixed": "#d5e3ff",
+              "secondary": "#006d40",
+              "inverse-surface": "#2e3132",
+              "tertiary-container": "#cca800",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8fafb",
+              "tertiary": "#715c00",
+              "inverse-primary": "#a8c8ff",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#165ca9",
+              "on-tertiary-fixed": "#231b00",
+              "on-secondary-fixed": "#002110",
+              "surface-tint": "#1b5eac",
+              "tertiary-fixed-dim": "#ecc300",
+              "tertiary-fixed": "#ffe17b",
+              "on-tertiary-fixed-variant": "#554500",
+              "on-secondary-fixed-variant": "#00522f",
+              "on-primary-fixed": "#001b3c",
+              "secondary-fixed-dim": "#61dd98",
+              "secondary-fixed": "#7efab3",
+              "primary-container": "#3a75c4",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eff1f2",
+              "error-container": "#ffdad6",
+              "secondary-container": "#7bf7b0",
+              "on-background": "#191c1d",
+              "primary-fixed-dim": "#a8c8ff",
+              "outline-variant": "#c2c6d3",
+              "outline": "#727782",
+              "background": "#f8fafb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8fafb;
+        color: #191c1d;
+      }
+      h1, h2, h3 {
+        font-family: 'Manrope', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] dark:bg-[#191c1d] opacity-80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#165ca9] dark:text-[#3a75c4] text-2xl" data-icon="account_balance">account_balance</span>
+<span class="text-xl font-bold tracking-tighter text-[#165ca9] dark:text-[#3a75c4]">ASI Gabon</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#444748] dark:text-[#c2c6d3] font-['Inter'] text-sm font-medium hover:text-[#165ca9] transition-colors" href="#">Assistant</a>
+<a class="text-[#165ca9] dark:text-[#3a75c4] font-semibold font-['Inter'] text-sm" href="#">Services</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] font-['Inter'] text-sm font-medium hover:text-[#165ca9] transition-colors" href="#">À propos</a>
+<a class="text-[#444748] dark:text-[#c2c6d3] font-['Inter'] text-sm font-medium hover:text-[#165ca9] transition-colors" href="#">Support</a>
+</nav>
+<button class="text-[#165ca9] dark:text-[#3a75c4] font-['Manrope'] font-bold tracking-tight active:scale-95 duration-200">Accueil</button>
+</header>
+<!-- Hero Section -->
+<main class="pt-24 px-6 max-w-7xl mx-auto">
+<section class="mb-16">
+<div class="relative overflow-hidden rounded-xl p-8 md:p-16 mb-12 bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest uppercase rounded-full mb-6">Plateforme Officielle</span>
+<h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">Portail National des Services Publics</h1>
+<p class="text-lg md:text-xl opacity-90 leading-relaxed font-body">Accédez en toute sécurité à l'ensemble de vos démarches administratives, de santé et d'éducation pour une citoyenneté numérique simplifiée.</p>
+</div>
+<!-- Abstract National Pattern Decor -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="absolute bottom-0 left-1/2 w-96 h-96 bg-tertiary/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Search bar -->
+<div class="flex flex-col md:flex-row gap-4 mb-12">
+<div class="flex-grow flex items-center bg-surface-container-high rounded-xl px-6 py-4 shadow-sm border border-outline-variant/15">
+<span class="material-symbols-outlined text-outline mr-3" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline/70" placeholder="Rechercher un service, une démarche ou une institution..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold shadow-md hover:bg-primary-container transition-all active:scale-95">Trouver</button>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="mb-20">
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-2xl md:text-3xl font-bold text-on-surface flex items-center gap-3">
+<span class="w-2 h-8 bg-secondary rounded-full"></span>
+                    Catégories de services
+                </h2>
+<span class="text-sm font-medium text-outline uppercase tracking-wider hidden sm:block">8 Catégories Actives</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+<!-- Identité -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="badge">badge</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Identité</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Cartes d'identité, passeports, actes de naissance et certificats de nationalité gabonaise.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Fiscalité -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Fiscalité</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Déclarations d'impôts, taxes foncières, douanes et paiements des redevances publiques.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Santé -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="medical_services">medical_services</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Santé</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Assurance CNAMGS, carnets de santé numériques et prise de rendez-vous en centres publics.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Emploi -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center text-primary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="work">work</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Emploi</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Offres d'emploi public, concours administratifs et aide à l'insertion professionnelle.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Éducation -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container/20 flex items-center justify-center text-on-secondary-container mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="school">school</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Éducation</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Bourses d'études, inscriptions universitaires, examens et diplômes nationaux.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Transport -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="directions_car">directions_car</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Transport</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Permis de conduire, cartes grises, vignettes et informations sur les transports nationaux.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Justice -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-on-surface-variant/10 flex items-center justify-center text-on-surface-variant mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="gavel">gavel</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Justice</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Casier judiciaire, aide juridictionnelle et suivi des procédures civiles et pénales.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Entreprises -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="business_center">business_center</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-on-surface">Entreprises</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-8 flex-grow">Création d'entreprise (ANPI), licences commerciales et déclarations sociales.</p>
+<button class="w-full flex items-center justify-between group/btn py-3 px-4 rounded-lg bg-surface-container-low text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">
+                        Consulter
+                        <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Promotional/Help Section (Institutional Reassurance) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+<div class="bg-surface-container-low rounded-xl p-8 flex items-start gap-6 border border-outline-variant/10">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Sécurité des données</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Vos informations personnelles sont protégées par les plus hauts standards de chiffrement souverain et traitées conformément à la législation gabonaise sur la protection de la vie privée.</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 flex items-start gap-6 border border-outline-variant/10">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-2">Assistance 24/7</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Besoin d'aide pour vos démarches ? Notre assistant intelligent ASI est disponible à tout moment pour vous guider étape par étape dans votre navigation.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 dark:bg-[#191c1d]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 shadow-[0_-8px_32px_rgba(25,28,29,0.06)] md:hidden rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Assistant</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#165ca9] dark:text-[#3a75c4] bg-[#3a75c4]/10 rounded-xl px-4 py-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="info">info</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">À propos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#71787a] dark:text-[#a0a3a5] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="contact_support">contact_support</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Support</span>
+</a>
+</nav>
+<!-- Contextual FAB (Chat with AI) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-16 h-16 rounded-full bg-primary text-on-primary shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl" data-icon="chat_bubble" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-xs font-bold py-2 px-4 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Une question ?</span>
+</button>
+</body></html>
