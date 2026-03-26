@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { FirebaseAuthStatus } from "@/components/auth/firebase-auth-status";
+
 const SERVICE_CATEGORIES = [
   ["Identité", "Cartes d'identité, passeports, actes de naissance et certificats de nationalité gabonaise.", "badge", "bg-primary/10 text-primary", "passeport"],
   ["Fiscalité", "Déclarations d'impôts, taxes foncières, douanes et paiements des redevances publiques.", "account_balance_wallet", "bg-tertiary/10 text-tertiary", "impôts"],
@@ -30,6 +32,9 @@ export function ServicesPage() {
           <Link className="text-primary font-semibold" href="/services">
             Services
           </Link>
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/abonnement">
+            Abonnement
+          </Link>
           <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/a-propos">
             À propos
           </Link>
@@ -37,9 +42,12 @@ export function ServicesPage() {
             Support
           </Link>
         </nav>
-        <Link className="text-primary font-['Manrope'] font-bold tracking-tight active:scale-95 duration-200" href="/">
-          Accueil
-        </Link>
+        <div className="flex items-center gap-3">
+          <FirebaseAuthStatus />
+          <Link className="text-primary font-['Manrope'] font-bold tracking-tight active:scale-95 duration-200" href="/">
+            Accueil
+          </Link>
+        </div>
       </header>
       <main className="pt-24 px-6 max-w-7xl mx-auto">
         <section className="mb-16">

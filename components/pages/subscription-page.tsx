@@ -1,11 +1,7 @@
 import Link from "next/link";
 
-import { StripeBuyButton } from "@/components/billing/stripe-buy-button";
-import {
-  HAS_STRIPE_BUY_BUTTON,
-  HAS_STRIPE_PAYMENT_LINK,
-  STRIPE_PAYMENT_LINK,
-} from "@/lib/billing/config";
+import { FirebaseAuthStatus } from "@/components/auth/firebase-auth-status";
+import { SubscriptionAuthPanel } from "@/components/billing/subscription-auth-panel";
 
 const SUBSCRIPTION_HIGHLIGHTS = [
   {
@@ -63,12 +59,15 @@ export function SubscriptionPage() {
             Support
           </Link>
         </nav>
-        <Link
-          className="font-semibold text-primary active:scale-95 duration-200"
-          href="/"
-        >
-          Accueil
-        </Link>
+        <div className="flex items-center gap-3">
+          <FirebaseAuthStatus />
+          <Link
+            className="font-semibold text-primary active:scale-95 duration-200"
+            href="/"
+          >
+            Accueil
+          </Link>
+        </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-6 pb-28 pt-24">
@@ -151,30 +150,10 @@ export function SubscriptionPage() {
               Souscrire maintenant
             </h2>
             <p className="mt-4 text-sm leading-7 text-on-surface-variant">
-              Le lien Stripe a ete configure directement pour ton offre actuelle.
+              Connectez-vous d'abord, puis continuez vers Stripe avec votre compte.
             </p>
 
-            {HAS_STRIPE_BUY_BUTTON ? (
-              <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/70 bg-white p-4">
-                <StripeBuyButton />
-              </div>
-            ) : HAS_STRIPE_PAYMENT_LINK ? (
-              <a
-                href={STRIPE_PAYMENT_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-primary px-6 text-base font-bold text-on-primary shadow-subtle transition hover:shadow-elevated active:scale-[0.99]"
-              >
-                <span className="material-symbols-outlined mr-2">
-                  open_in_new
-                </span>
-                Ouvrir le paiement Stripe
-              </a>
-            ) : (
-              <div className="mt-8 rounded-2xl border border-[#d76f6f]/20 bg-[#fff1f1] p-4 text-sm leading-6 text-[#8b2c2c]">
-                Aucun paiement Stripe n'est configure pour le moment.
-              </div>
-            )}
+            <SubscriptionAuthPanel />
 
             <div className="mt-8 rounded-[1.5rem] border border-white/70 bg-white/70 p-5 text-sm leading-6 text-on-surface-variant">
               Besoin d'aide avant de souscrire ?
@@ -182,17 +161,6 @@ export function SubscriptionPage() {
                 Contacter le support
               </Link>
             </div>
-
-            {HAS_STRIPE_BUY_BUTTON && HAS_STRIPE_PAYMENT_LINK ? (
-              <a
-                href={STRIPE_PAYMENT_LINK}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:underline"
-              >
-                Utiliser le lien de paiement direct
-              </a>
-            ) : null}
           </aside>
         </section>
       </main>

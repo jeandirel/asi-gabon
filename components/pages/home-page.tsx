@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { FirebaseAuthStatus } from "@/components/auth/firebase-auth-status";
+
 export function HomePage() {
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-secondary-container">
@@ -24,6 +26,12 @@ export function HomePage() {
           </Link>
           <Link
             className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors"
+            href="/abonnement"
+          >
+            Abonnement
+          </Link>
+          <Link
+            className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors"
             href="/a-propos"
           >
             À propos
@@ -35,12 +43,15 @@ export function HomePage() {
             Support
           </Link>
         </nav>
-        <Link
-          className="text-primary font-semibold active:scale-95 duration-200"
-          href="/"
-        >
-          Accueil
-        </Link>
+        <div className="flex items-center gap-3">
+          <FirebaseAuthStatus />
+          <Link
+            className="text-primary font-semibold active:scale-95 duration-200"
+            href="/"
+          >
+            Accueil
+          </Link>
+        </div>
       </header>
       <main className="pt-16 pb-24">
         <section className="relative min-h-[707px] flex flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-primary to-primary-container text-on-primary overflow-hidden">
@@ -73,6 +84,12 @@ export function HomePage() {
                 className="w-full sm:w-auto px-8 py-4 bg-surface/10 backdrop-blur-md text-on-primary border border-on-primary/20 font-bold rounded-xl hover:bg-surface/20 active:scale-95 transition-all duration-300"
               >
                 Explorer les services
+              </Link>
+              <Link
+                href="/abonnement"
+                className="w-full sm:w-auto px-8 py-4 bg-white/12 backdrop-blur-md text-on-primary border border-white/20 font-bold rounded-xl hover:bg-white/18 active:scale-95 transition-all duration-300"
+              >
+                Voir l&apos;abonnement
               </Link>
             </div>
           </div>
@@ -280,6 +297,7 @@ export function HomePage() {
             <ul className="space-y-2 text-sm">
               <li><Link className="hover:text-primary transition-colors" href="/">Accueil</Link></li>
               <li><Link className="hover:text-primary transition-colors" href="/services">Nos Services</Link></li>
+              <li><Link className="hover:text-primary transition-colors" href="/abonnement">Abonnement</Link></li>
               <li><Link className="hover:text-primary transition-colors" href="/assistant">Questions Fréquentes</Link></li>
               <li><Link className="hover:text-primary transition-colors" href="/support">Contact</Link></li>
             </ul>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 
+import { FirebaseAuthStatus } from "@/components/auth/firebase-auth-status";
 import { useChatbaseWidget } from "@/components/chatbase/widget-provider";
 
 const SUGGESTIONS = [
@@ -218,6 +219,12 @@ export function AssistantPage() {
           </Link>
           <Link
             className="rounded-lg px-3 py-1 text-on-surface-variant transition-colors hover:bg-surface-container-high font-medium"
+            href="/abonnement"
+          >
+            Abonnement
+          </Link>
+          <Link
+            className="rounded-lg px-3 py-1 text-on-surface-variant transition-colors hover:bg-surface-container-high font-medium"
             href="/a-propos"
           >
             A propos
@@ -229,9 +236,12 @@ export function AssistantPage() {
             Support
           </Link>
         </nav>
-        <Link className="font-semibold text-primary active:scale-95 duration-200" href="/">
-          Accueil
-        </Link>
+        <div className="flex items-center gap-3">
+          <FirebaseAuthStatus />
+          <Link className="font-semibold text-primary active:scale-95 duration-200" href="/">
+            Accueil
+          </Link>
+        </div>
       </header>
 
       <main className="pb-24 pt-16">
