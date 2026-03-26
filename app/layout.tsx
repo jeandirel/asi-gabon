@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 
-import { ChatbaseWidgetProvider } from "@/components/chatbase/widget-provider";
 import { ServiceWorkerRegistration } from "@/components/service-worker-registration";
 
 import "./globals.css";
@@ -41,10 +40,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const chatbaseAgentId = process.env.CHATBASE_AGENT_ID?.trim() ?? null;
-
   return (
-    <html className="light" lang="fr">
+    <html className="light" lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -57,11 +54,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
-      <body className="bg-surface font-body text-on-surface antialiased">
+      <body
+        className="bg-surface font-body text-on-surface antialiased"
+        suppressHydrationWarning
+      >
         <ServiceWorkerRegistration />
-        <ChatbaseWidgetProvider agentId={chatbaseAgentId}>
-          {children}
-        </ChatbaseWidgetProvider>
+        {children}
       </body>
     </html>
   );

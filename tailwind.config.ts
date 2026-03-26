@@ -70,6 +70,8 @@ const config: Config = {
       },
       boxShadow: {
         ambient: "0 8px 32px rgba(25, 28, 29, 0.06)",
+        subtle: "0 4px 24px -4px rgba(25, 28, 29, 0.06), 0 2px 8px -2px rgba(25, 28, 29, 0.04)",
+        elevated: "0 12px 32px -4px rgba(25, 28, 29, 0.08), 0 4px 16px -4px rgba(25, 28, 29, 0.06)",
       },
     },
   },

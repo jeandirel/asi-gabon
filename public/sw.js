@@ -1,4 +1,4 @@
-const CACHE_NAME = "asi-gabon-shell-v1";
+const CACHE_NAME = "asi-gabon-shell-v2";
 const ASSETS_TO_CACHE = [
   "/",
   "/assistant",
@@ -9,6 +9,7 @@ const ASSETS_TO_CACHE = [
 ];
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE)),
   );
@@ -16,18 +17,45 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key)),
+    Promise.all([
+      self.clients.claim(),
+      caches.keys().then((keys) =>
+        Promise.all(
+          keys
+            .filter((key) => key !== CACHE_NAME)
+            .map((key) => caches.delete(key)),
+        ),
       ),
-    ),
+    ]),
   );
 });
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || event.request.url.includes("/api/")) {
+    return;
+  }
+
+  const url = new URL(event.request.url);
+  const isSameOrigin = url.origin === self.location.origin;
+  const isNavigation = event.request.mode === "navigate";
+
+  if (isNavigation) {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone).catch(() => undefined);
+          });
+
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request).then((cachedResponse) => cachedResponse)),
+    );
+    return;
+  }
+
+  if (!isSameOrigin) {
     return;
   }
 

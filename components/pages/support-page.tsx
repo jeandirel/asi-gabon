@@ -3,30 +3,30 @@ import Link from "next/link";
 export function SupportPage() {
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] opacity-80 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/15 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="material-symbols-outlined text-[#165ca9] text-2xl">
+          <span className="material-symbols-outlined text-primary text-2xl">
             account_balance
           </span>
-          <span className="font-['Manrope'] font-bold tracking-tight text-[#191c1d] text-xl">
+          <span className="font-['Manrope'] font-bold tracking-tight text-on-surface text-xl">
             ASI Gabon
           </span>
         </div>
         <nav className="hidden md:flex gap-8">
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors font-medium" href="/assistant">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/assistant">
             Assistant
           </Link>
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors font-medium" href="/services">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/services">
             Services
           </Link>
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors font-medium" href="/a-propos">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/a-propos">
             À propos
           </Link>
-          <Link className="text-[#165ca9] font-semibold px-3 py-1 rounded-lg" href="/support">
+          <Link className="text-primary font-semibold px-3 py-1 rounded-lg" href="/support">
             Support
           </Link>
         </nav>
-        <Link className="text-[#165ca9] font-bold text-sm uppercase tracking-widest active:scale-95 duration-200" href="/">
+        <Link className="text-primary font-bold text-sm uppercase tracking-widest active:scale-95 duration-200" href="/">
           Accueil
         </Link>
       </header>
@@ -120,20 +120,20 @@ export function SupportPage() {
                   <label className="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">
                     Nom Complet
                   </label>
-                  <input className="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface" placeholder="Jean-Pierre..." type="text" />
+                  <input className="w-full bg-surface-container-high/50 border border-outline-variant/20 rounded-xl p-4 outline-none text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all shadow-inner" placeholder="Jean-Pierre..." type="text" />
                 </div>
                 <div className="space-y-2">
                   <label className="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">
                     Adresse Email
                   </label>
-                  <input className="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface" placeholder="contact@domaine.ga" type="email" />
+                  <input className="w-full bg-surface-container-high/50 border border-outline-variant/20 rounded-xl p-4 outline-none text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all shadow-inner" placeholder="contact@domaine.ga" type="email" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="block font-label text-[10px] font-bold tracking-widest text-outline uppercase ml-1">
                   Votre Message
                 </label>
-                <textarea className="w-full bg-surface-container-high border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all outline-none text-on-surface resize-none" placeholder="Comment pouvons-nous vous accompagner ?" rows={5} />
+                <textarea className="w-full bg-surface-container-high/50 border border-outline-variant/20 rounded-xl p-4 outline-none text-on-surface resize-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all shadow-inner" placeholder="Comment pouvons-nous vous accompagner ?" rows={5} />
               </div>
               <div className="flex items-center gap-4 p-4 bg-secondary-container/20 rounded-xl">
                 <span className="material-symbols-outlined text-secondary">verified_user</span>
@@ -154,7 +154,7 @@ export function SupportPage() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-outline font-bold">Téléphone</p>
-                  <p className="font-bold">+241 01 76 00 00</p>
+                  <p className="font-bold">+33664483732</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -163,7 +163,7 @@ export function SupportPage() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest text-outline font-bold">Email Direct</p>
-                  <p className="font-bold">support@asi.gouv.ga</p>
+                  <p className="font-bold">jeandirel@ogooueia.com</p>
                 </div>
               </div>
             </div>
@@ -189,21 +189,21 @@ export function SupportPage() {
           </div>
         </section>
       </main>
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 rounded-t-2xl shadow-[0_-8px_32px_rgba(25,28,29,0.06)]">
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/assistant">
-          <span className="material-symbols-outlined">smart_toy</span>
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface/85 backdrop-blur-xl border-t border-outline-variant/15 shadow-[0_-20px_40px_rgba(0,0,0,0.04)] rounded-t-[2rem]">
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/assistant">
+          <span className="material-symbols-outlined mb-1">smart_toy</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Assistant</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/services">
-          <span className="material-symbols-outlined">grid_view</span>
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/services">
+          <span className="material-symbols-outlined mb-1">grid_view</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Services</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/a-propos">
-          <span className="material-symbols-outlined">info</span>
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/a-propos">
+          <span className="material-symbols-outlined mb-1">info</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">À propos</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#165ca9] bg-[#3a75c4]/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="/support">
-          <span className="material-symbols-outlined">contact_support</span>
+        <Link className="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="/support">
+          <span className="material-symbols-outlined mb-1">contact_support</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Support</span>
         </Link>
       </nav>

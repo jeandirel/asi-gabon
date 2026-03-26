@@ -3,40 +3,40 @@ import Link from "next/link";
 export function HomePage() {
   return (
     <div className="bg-surface text-on-surface font-body selection:bg-secondary-container">
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] opacity-80 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/15 shadow-sm">
         <div className="flex items-center gap-2">
-          <span className="material-symbols-outlined text-[#165ca9] text-2xl">
+          <span className="material-symbols-outlined text-primary text-2xl">
             account_balance
           </span>
-          <h1 className="font-['Manrope'] font-bold tracking-tight text-[#191c1d] text-xl">
+          <h1 className="font-['Manrope'] font-bold tracking-tight text-on-surface text-xl">
             ASI Gabon
           </h1>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link className="text-[#165ca9] font-semibold transition-colors" href="/assistant">
+          <Link className="text-primary font-semibold transition-colors" href="/assistant">
             Assistant
           </Link>
           <Link
-            className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors"
+            className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors"
             href="/services"
           >
             Services
           </Link>
           <Link
-            className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors"
+            className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors"
             href="/a-propos"
           >
             À propos
           </Link>
           <Link
-            className="text-[#444748] hover:bg-[#e6e8e9] px-3 py-1 rounded-lg transition-colors"
+            className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors"
             href="/support"
           >
             Support
           </Link>
         </nav>
         <Link
-          className="text-[#165ca9] font-semibold active:scale-95 duration-200"
+          className="text-primary font-semibold active:scale-95 duration-200"
           href="/"
         >
           Accueil
@@ -63,14 +63,14 @@ export function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <Link
-                href="/assistant"
-                className="w-full sm:w-auto px-8 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all"
+                href="/assistant?launch=1"
+                className="w-full sm:w-auto px-8 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-xl shadow-subtle hover:shadow-elevated active:scale-95 transition-all duration-300"
               >
                 Commencer
               </Link>
               <Link
                 href="/services"
-                className="w-full sm:w-auto px-8 py-4 bg-surface/10 backdrop-blur-md text-on-primary border border-on-primary/20 font-bold rounded-xl hover:bg-surface/20 active:scale-95 transition-all"
+                className="w-full sm:w-auto px-8 py-4 bg-surface/10 backdrop-blur-md text-on-primary border border-on-primary/20 font-bold rounded-xl hover:bg-surface/20 active:scale-95 transition-all duration-300"
               >
                 Explorer les services
               </Link>
@@ -114,16 +114,16 @@ export function HomePage() {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className="space-y-6 p-8 bg-surface-container-low rounded-2xl relative overflow-hidden group"
+                className="space-y-6 p-8 bg-surface-container-lowest border border-outline-variant/10 shadow-subtle hover:shadow-elevated rounded-2xl relative overflow-hidden group transition-all duration-300"
               >
                 <div
-                  className={`${item.iconColor} absolute -top-8 -right-8 opacity-10 group-hover:opacity-20 transition-opacity`}
+                  className={`${item.iconColor} absolute -top-8 -right-8 opacity-5 group-hover:opacity-15 group-hover:scale-105 transition-all duration-500`}
                 >
                   <span className="material-symbols-outlined text-[120px]">
                     {item.icon}
                   </span>
                 </div>
-                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary text-on-primary font-headline font-bold text-xl">
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-primary text-on-primary font-headline font-bold text-xl shadow-sm">
                   {index + 1}
                 </div>
                 <h4 className="font-headline text-2xl font-bold">{item.title}</h4>
@@ -162,15 +162,15 @@ export function HomePage() {
                 <Link
                   key={title}
                   href={`/assistant?q=${encodeURIComponent(query)}`}
-                  className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col gap-4 border border-outline-variant/15"
+                  className="bg-surface-container-lowest p-6 rounded-2xl shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col gap-4 border border-outline-variant/15 hover:border-primary/20 group"
                 >
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center ${colors}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${colors}`}>
                     <span className="material-symbols-outlined">{icon}</span>
                   </div>
                   <h5 className="font-headline font-bold">{title}</h5>
                   <p className="text-xs text-on-surface-variant line-clamp-2">{text}</p>
-                  <span className="mt-auto text-primary text-xs font-bold tracking-wider uppercase">
-                    Consulter
+                  <span className="mt-auto text-primary text-xs font-bold tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Consulter <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                   </span>
                 </Link>
               ))}
@@ -200,14 +200,14 @@ export function HomePage() {
               </div>
               <form action="/assistant" className="relative group">
                 <input
-                  className="w-full bg-surface-container-high border-none rounded-xl py-4 px-6 text-on-surface focus:ring-2 focus:ring-primary focus:ring-opacity-20 placeholder-on-surface-variant/50"
+                  className="w-full bg-surface-container-high/50 border border-outline-variant/20 rounded-xl py-4 px-6 text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all placeholder-on-surface-variant/50 shadow-inner"
                   placeholder="Posez votre question ici..."
                   type="text"
                   name="q"
                 />
                 <button
                   type="submit"
-                  className="absolute right-3 top-2 bottom-2 bg-primary text-on-primary px-6 rounded-lg font-bold"
+                  className="absolute right-3 top-2 bottom-2 bg-primary text-on-primary px-6 rounded-lg font-bold shadow-subtle hover:shadow-elevated transition-all active:scale-95"
                 >
                   Envoyer
                 </button>
@@ -227,26 +227,26 @@ export function HomePage() {
           </div>
         </section>
       </main>
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 shadow-[0_-8px_32px_rgba(25,28,29,0.06)] rounded-t-2xl">
-        <Link className="flex flex-col items-center justify-center text-[#165ca9] bg-[#3a75c4]/10 rounded-xl px-4 py-1" href="/assistant">
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface/85 backdrop-blur-xl border-t border-outline-variant/15 shadow-[0_-20px_40px_rgba(0,0,0,0.04)] rounded-t-[2rem]">
+        <Link className="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-4 py-1" href="/assistant">
           <span className="material-symbols-outlined">smart_toy</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">
             Assistant
           </span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all" href="/services">
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all" href="/services">
           <span className="material-symbols-outlined">grid_view</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">
             Services
           </span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all" href="/a-propos">
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all" href="/a-propos">
           <span className="material-symbols-outlined">info</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">
             À propos
           </span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all" href="/support">
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all" href="/support">
           <span className="material-symbols-outlined">contact_support</span>
           <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">
             Support

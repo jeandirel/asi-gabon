@@ -34,45 +34,65 @@ const ChatbaseWidgetContext = createContext<ChatbaseWidgetContextValue>({
   status: "disabled",
 });
 
-function ensureChatbaseStub() {
-  if (
+function initializeChatbaseSnippet(agentId: string) {
+  const isInitialized =
     typeof window.chatbase === "function" &&
-    window.chatbase("getState") === "initialized"
-  ) {
-    return;
+    window.chatbase("getState") === "initialized";
+
+  if (!window.chatbase || !isInitialized) {
+    type QueuedChatbase = ((...args: unknown[]) => void) & { q: unknown[][] };
+
+    const queued: QueuedChatbase = ((...args: unknown[]) => {
+      if (!queued.q) {
+        queued.q = [];
+      }
+      queued.q.push(args);
+    }) as QueuedChatbase;
+    queued.q = [];
+
+    window.chatbase = new Proxy(queued, {
+      get(target, prop) {
+        if (prop === "q") {
+          return target.q;
+        }
+
+        return (...args: unknown[]) => target(prop as string, ...args);
+      },
+    });
   }
 
-  type QueuedChatbase = ((...args: unknown[]) => void) & { q: unknown[][] };
-
-  const queued: QueuedChatbase = ((...args: unknown[]) => {
-    if (!queued.q) {
-      queued.q = [];
+  const onLoad = () => {
+    if (document.getElementById(agentId)) {
+      return;
     }
-    queued.q.push(args);
-  }) as QueuedChatbase;
-  queued.q = [];
 
-  window.chatbase = new Proxy(queued, {
-    get(target, prop) {
-      if (prop === "q") {
-        return target.q;
-      }
+    const script = document.createElement("script");
+    script.src = "https://www.chatbase.co/embed.min.js";
+    script.id = agentId;
+    script.setAttribute("domain", "www.chatbase.co");
+    document.body.appendChild(script);
+  };
 
-      return (...args: unknown[]) => target(prop as string, ...args);
-    },
-  });
+  if (document.readyState === "complete") {
+    onLoad();
+    return () => undefined;
+  }
+
+  window.addEventListener("load", onLoad);
+  return () => {
+    window.removeEventListener("load", onLoad);
+  };
 }
 
-function ensureChatbaseScript(agentId: string) {
-  if (document.getElementById(agentId)) {
-    return;
-  }
-
-  const script = document.createElement("script");
-  script.src = "https://www.chatbase.co/embed.min.js";
-  script.id = agentId;
-  script.setAttribute("domain", "www.chatbase.co");
-  document.body.appendChild(script);
+function removeChatbaseArtifacts(agentId: string) {
+  window.chatbase?.close?.();
+  document.getElementById(agentId)?.remove();
+  document
+    .querySelectorAll(
+      'script[src*="chatbase.co/embed.min.js"], iframe[src*="chatbase.co"], [id^="chatbase-"]',
+    )
+    .forEach((node) => node.remove());
+  window.chatbase = undefined;
 }
 
 export function ChatbaseWidgetProvider({
@@ -94,15 +114,14 @@ export function ChatbaseWidgetProvider({
     if (!agentId) {
       setStatus("disabled");
       setError(
-        "Le widget Chatbase n'est pas configuré. Ajoutez CHATBASE_AGENT_ID côté serveur.",
+        "Le widget Chatbase n'est pas configure. Ajoutez CHATBASE_AGENT_ID cote serveur.",
       );
       return;
     }
 
     const userId = getOrCreateAnonymousChatbaseUserId();
     setAnonymousUserId(userId);
-    ensureChatbaseStub();
-    ensureChatbaseScript(agentId);
+    const cleanupSnippet = initializeChatbaseSnippet(agentId);
 
     let attempts = 0;
     const interval = window.setInterval(() => {
@@ -123,7 +142,7 @@ export function ChatbaseWidgetProvider({
       if (attempts >= 60) {
         setStatus("error");
         setError(
-          "Le widget Chatbase ne s'est pas chargé correctement. Réessayez après avoir rechargé la page.",
+          "Le widget Chatbase ne s'est pas charge correctement. Rechargez la page puis reessayez.",
         );
         window.clearInterval(interval);
       }
@@ -131,6 +150,9 @@ export function ChatbaseWidgetProvider({
 
     return () => {
       window.clearInterval(interval);
+      cleanupSnippet();
+      identityRequestedRef.current = false;
+      removeChatbaseArtifacts(agentId);
     };
   }, [agentId]);
 
@@ -170,7 +192,7 @@ export function ChatbaseWidgetProvider({
         setError(
           caughtError instanceof Error
             ? caughtError.message
-            : "L'identification sécurisée du widget Chatbase a échoué.",
+            : "L'identification securisee du widget Chatbase a echoue.",
         );
       } finally {
         setStatus((currentStatus) =>

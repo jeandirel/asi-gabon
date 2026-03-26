@@ -3,30 +3,30 @@ import Link from "next/link";
 export function AboutPage() {
   return (
     <div className="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#f8fafb] opacity-80 backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/15 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="material-symbols-outlined text-[#165ca9]">
+          <span className="material-symbols-outlined text-primary text-2xl">
             account_balance
           </span>
-          <span className="text-xl font-bold tracking-tighter text-[#165ca9]">
+          <span className="text-xl font-bold tracking-tight text-on-surface">
             ASI Gabon
           </span>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="/assistant">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/assistant">
             Assistant
           </Link>
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="/services">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/services">
             Services
           </Link>
-          <Link className="text-[#165ca9] font-semibold font-['Manrope'] tracking-tight" href="/a-propos">
+          <Link className="text-primary font-semibold px-3 py-1 rounded-lg" href="/a-propos">
             À propos
           </Link>
-          <Link className="text-[#444748] hover:bg-[#e6e8e9] transition-colors px-3 py-2 rounded-lg font-['Manrope'] font-bold tracking-tight" href="/support">
+          <Link className="text-on-surface-variant hover:bg-surface-container-high px-3 py-1 rounded-lg transition-colors font-medium" href="/support">
             Support
           </Link>
         </nav>
-        <Link className="px-5 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold active:scale-95 duration-200" href="/">
+        <Link className="text-primary font-bold text-sm uppercase tracking-widest active:scale-95 duration-200" href="/">
           Accueil
         </Link>
       </header>
@@ -120,10 +120,10 @@ export function AboutPage() {
             ].map(([title, text, icon, bg]) => (
               <div
                 key={title}
-                className="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-md transition-shadow group"
+                className="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-subtle hover:shadow-elevated transition-shadow duration-300 group"
               >
-                <div className={`w-12 h-12 rounded-lg ${bg} flex items-center justify-center mb-6`}>
-                  <span className="material-symbols-outlined">{icon}</span>
+                <div className={`w-12 h-12 rounded-xl ${bg} flex items-center justify-center mb-6 shadow-sm group-hover:shadow-md transition-shadow`}>
+                  <span className="material-symbols-outlined text-xl">{icon}</span>
                 </div>
                 <h3 className="text-on-surface text-xl font-headline font-bold mb-3">
                   {title}
@@ -169,22 +169,22 @@ export function AboutPage() {
           </div>
         </section>
       </main>
-      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#f8fafb]/80 backdrop-blur-xl border-t border-[#c2c6d3]/15 rounded-t-2xl shadow-[0_-8px_32px_rgba(25,28,29,0.06)]">
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/assistant">
-          <span className="material-symbols-outlined">smart_toy</span>
-          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Assistant</span>
+      <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface/85 backdrop-blur-xl border-t border-outline-variant/15 shadow-[0_-20px_40px_rgba(0,0,0,0.04)] rounded-t-[2rem]">
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/assistant">
+          <span className="material-symbols-outlined mb-1">smart_toy</span>
+          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Assistant</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/services">
-          <span className="material-symbols-outlined">grid_view</span>
-          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Services</span>
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/services">
+          <span className="material-symbols-outlined mb-1">grid_view</span>
+          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Services</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#165ca9] bg-[#3a75c4]/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="/a-propos">
-          <span className="material-symbols-outlined">info</span>
-          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">À propos</span>
+        <Link className="flex flex-col items-center justify-center text-primary bg-primary-container/10 rounded-xl px-4 py-1 active:scale-90 duration-150" href="/a-propos">
+          <span className="material-symbols-outlined mb-1">info</span>
+          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">À propos</span>
         </Link>
-        <Link className="flex flex-col items-center justify-center text-[#71787a] hover:text-[#006d40] transition-all active:scale-90 duration-150" href="/support">
-          <span className="material-symbols-outlined">contact_support</span>
-          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-1">Support</span>
+        <Link className="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-all active:scale-90 duration-150" href="/support">
+          <span className="material-symbols-outlined mb-1">contact_support</span>
+          <span className="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Support</span>
         </Link>
       </nav>
       <footer className="bg-surface-container-low border-t border-outline-variant/10 py-16 px-6">
@@ -216,8 +216,8 @@ export function AboutPage() {
               <h4 className="text-on-surface font-headline font-bold mb-4">Contact</h4>
               <ul className="space-y-2 text-on-surface-variant text-sm">
                 <li>Libreville, Gabon</li>
-                <li>support@asi.gouv.ga</li>
-                <li>+241 (0) 11 00 00 00</li>
+                <li>jeandirel@ogooueia.com</li>
+                <li>+33664483732</li>
               </ul>
             </div>
           </div>
