@@ -9,6 +9,7 @@ import {
   getRedirectResult,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signInWithRedirect,
   signOut,
   type User,
@@ -37,8 +38,12 @@ function getFriendlyAuthError(error: unknown) {
         return "Identifiants invalides. Verifiez votre email et votre mot de passe.";
       case "auth/invalid-email":
         return "Adresse email invalide.";
+      case "auth/unauthorized-domain":
+        return "Le domaine actuel n'est pas autorise dans Firebase Authentication.";
       case "auth/operation-not-allowed":
         return "Cette methode de connexion n'est pas encore activee dans Firebase.";
+      case "auth/cancelled-popup-request":
+        return "Une autre fenetre de connexion est deja en cours.";
       case "auth/popup-blocked":
       case "auth/popup-closed-by-user":
         return "Connexion interrompue. Reessayez.";
@@ -67,6 +72,22 @@ function buildStripeLink(email: string | null | undefined) {
   url.searchParams.set("prefilled_email", email);
 
   return url.toString();
+}
+
+function shouldUseRedirectFlow() {
+  if (typeof window === "undefined") {
+    return true;
+  }
+
+  const isStandalone =
+    window.matchMedia?.("(display-mode: standalone)").matches ||
+    ((window.navigator as Navigator & { standalone?: boolean }).standalone === true);
+
+  const userAgent = window.navigator.userAgent.toLowerCase();
+  const isMobile =
+    /android|iphone|ipad|ipod|mobile/.test(userAgent) || window.innerWidth < 768;
+
+  return isStandalone || isMobile;
 }
 
 export function SubscriptionAuthPanel() {
@@ -110,14 +131,45 @@ export function SubscriptionAuthPanel() {
 
     try {
       setError(null);
-      setInfo("Redirection vers Google...");
+      setInfo("Connexion Google en cours...");
       setIsBusy(true);
 
       const provider = new GoogleAuthProvider();
-      await signInWithRedirect(getFirebaseAuth(), provider);
+      provider.setCustomParameters({ prompt: "select_account" });
+
+      const auth = getFirebaseAuth();
+
+      if (shouldUseRedirectFlow()) {
+        setInfo("Redirection vers Google...");
+        await signInWithRedirect(auth, provider);
+        return;
+      }
+
+      await signInWithPopup(auth, provider);
+      setInfo("Connexion Google reussie. Vous pouvez maintenant vous abonner.");
     } catch (providerError) {
-      setError(getFriendlyAuthError(providerError));
+      const authError =
+        typeof providerError === "object" &&
+        providerError !== null &&
+        "code" in providerError &&
+        typeof providerError.code === "string"
+          ? providerError.code
+          : "";
+
+      if (authError === "auth/popup-blocked" || authError === "auth/popup-closed-by-user") {
+        try {
+          setInfo("Popup indisponible. Redirection vers Google...");
+          await signInWithRedirect(getFirebaseAuth(), new GoogleAuthProvider());
+          return;
+        } catch (redirectError) {
+          setError(getFriendlyAuthError(redirectError));
+        }
+      } else {
+        setError(getFriendlyAuthError(providerError));
+      }
+
       setInfo(null);
+    } finally {
       setIsBusy(false);
     }
   };
