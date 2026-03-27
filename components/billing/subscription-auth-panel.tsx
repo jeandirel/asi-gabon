@@ -15,7 +15,6 @@ import {
   type User,
 } from "firebase/auth";
 
-import { HAS_STRIPE_PAYMENT_LINK, STRIPE_PAYMENT_LINK } from "@/lib/billing/config";
 import { getFirebaseAuth, isFirebaseConfigured } from "@/lib/firebase/client";
 
 type Mode = "signin" | "signup";
@@ -59,16 +58,16 @@ function getFriendlyAuthError(error: unknown) {
   return "La connexion n'a pas pu etre finalisee.";
 }
 
-function buildStripeLink(email: string | null | undefined) {
-  if (!STRIPE_PAYMENT_LINK) {
+function buildStripeLink(paymentLink: string, email: string | null | undefined) {
+  if (!paymentLink) {
     return "";
   }
 
   if (!email) {
-    return STRIPE_PAYMENT_LINK;
+    return paymentLink;
   }
 
-  const url = new URL(STRIPE_PAYMENT_LINK);
+  const url = new URL(paymentLink);
   url.searchParams.set("prefilled_email", email);
 
   return url.toString();
@@ -90,7 +89,15 @@ function shouldUseRedirectFlow() {
   return isStandalone || isMobile;
 }
 
-export function SubscriptionAuthPanel() {
+export interface SubscriptionAuthPanelProps {
+  paymentLink: string;
+  planName?: string;
+}
+
+export function SubscriptionAuthPanel({
+  paymentLink,
+  planName = "cette formule",
+}: SubscriptionAuthPanelProps) {
   const [mode, setMode] = useState<Mode>("signin");
   const [user, setUser] = useState<User | null>(null);
   const [email, setEmail] = useState("");
@@ -102,7 +109,11 @@ export function SubscriptionAuthPanel() {
   const [isInitializing, setIsInitializing] = useState(true);
 
   const isConfigured = isFirebaseConfigured();
-  const checkoutLink = useMemo(() => buildStripeLink(user?.email), [user?.email]);
+  const hasPaymentLink = paymentLink.trim().length > 0;
+  const checkoutLink = useMemo(
+    () => buildStripeLink(paymentLink, user?.email),
+    [paymentLink, user?.email],
+  );
 
   useEffect(() => {
     if (!isConfigured) {
@@ -146,7 +157,7 @@ export function SubscriptionAuthPanel() {
       }
 
       await signInWithPopup(auth, provider);
-      setInfo("Connexion Google reussie. Vous pouvez maintenant vous abonner.");
+      setInfo(`Connexion Google reussie. Vous pouvez maintenant demarrer votre essai gratuit sur ${planName}.`);
     } catch (providerError) {
       const authError =
         typeof providerError === "object" &&
@@ -195,10 +206,10 @@ export function SubscriptionAuthPanel() {
 
       if (mode === "signup") {
         await createUserWithEmailAndPassword(auth, email.trim(), password);
-        setInfo("Compte cree. Vous pouvez maintenant vous abonner.");
+        setInfo(`Compte cree. Vous pouvez maintenant demarrer votre essai gratuit sur ${planName}.`);
       } else {
         await signInWithEmailAndPassword(auth, email.trim(), password);
-        setInfo("Connexion reussie. Vous pouvez maintenant vous abonner.");
+        setInfo(`Connexion reussie. Vous pouvez maintenant demarrer votre essai gratuit sur ${planName}.`);
       }
     } catch (authError) {
       setError(getFriendlyAuthError(authError));
@@ -366,7 +377,7 @@ export function SubscriptionAuthPanel() {
         ) : null}
       </div>
 
-      {user && HAS_STRIPE_PAYMENT_LINK ? (
+      {user && hasPaymentLink ? (
         <a
           href={checkoutLink}
           target="_blank"
@@ -374,7 +385,7 @@ export function SubscriptionAuthPanel() {
           className="inline-flex min-h-14 w-full items-center justify-center rounded-2xl bg-primary px-6 text-base font-bold text-on-primary shadow-subtle transition hover:shadow-elevated active:scale-[0.99]"
         >
           <span className="material-symbols-outlined mr-2">lock</span>
-          S'abonner
+          Demarrer l'essai gratuit
         </a>
       ) : null}
 
@@ -384,7 +395,7 @@ export function SubscriptionAuthPanel() {
         </p>
       ) : null}
 
-      {user && !HAS_STRIPE_PAYMENT_LINK ? (
+      {user && !hasPaymentLink ? (
         <div className="rounded-2xl border border-[#d76f6f]/20 bg-[#fff1f1] p-4 text-sm leading-6 text-[#8b2c2c]">
           Aucun paiement Stripe n'est configure pour le moment.
         </div>
